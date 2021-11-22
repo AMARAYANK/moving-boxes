@@ -1,44 +1,65 @@
-import React, {useEffect, useRef, useState} from 'react';
-import './App.css';
+import React, { useEffect, useRef} from "react";
+import "./App.css";
+import { useMovement } from "./useMovement";
 
 export default function App() {
+  const [x, y, move, direction] = useMovement()
+  const canvasRef = useRef(null);
+  const linkDownRef = useRef(null);
+  const linkUpRef = useRef(null);
+  const linkRightRef = useRef(null);
+  const linkLeftRef = useRef(null);
 
-  const [x, setX] = useState(0)
-  const [y, setY] = useState(0)
-  
-  const canvasRef = useRef(null)
 
- // set the height and width of canvas 
+  // set the height and width of canvas
   useEffect(() => {
-    const context = canvasRef.current.getContext('2d');
+    const context = canvasRef.current.getContext("2d");
     context.canvas.height = window.innerHeight;
     context.canvas.width = window.innerWidth;
-  },[])
+  }, []);
 
   // move the box if x or y changes
   useEffect(() => {
-    const context = canvasRef.current.getContext('2d');
-    context.clearRect(0, 0, window.innerHeight, window.innerWidth)
-    context.fillRect(x, y, 100, 100)
-  },[x,y])
+    const context = canvasRef.current.getContext("2d");
+    context.clearRect(0, 0, window.innerHeight, window.innerWidth);
 
+    let theLinkRef;
+    if (direction === "down") theLinkRef = linkDownRef;
+    if (direction === "up") theLinkRef = linkUpRef;
+    if (direction === "right") theLinkRef = linkRightRef;
+    if (direction === "left") theLinkRef = linkLeftRef;
+
+    context.drawImage(theLinkRef.current, x, y);
+  }, [x, y, direction]);
 
   return (
     <div className="app">
-      <canvas ref={canvasRef}/>
+      <canvas ref={canvasRef} />
 
       <div className="arrows">
-        <button onClick={() => setY((y) => ( y > 0 ? y - 20 : 0))}>Up</button>
-        <button onClick={() => setX((x) => x - 20)}>Left</button>
-        <button onClick={() => setY((y) => y + 20)}>Down</button>
-        <button onClick={() => setX((x) => x + 20)}>Right</button>
+        <button onClick={() => move("up")}>Up</button>
+        <button onClick={() => move("left")}>Left</button>
+        <button onClick={() => move("down")}>Down</button>
+        <button onClick={() => move("right")}>Right</button>
       </div>
 
       <div className="images">
-        <img src="https://i.imgur.com/JYUB0m3.png" alt="Down" />
-        <img src="https://i.imgur.com/GEXD7bk.gif" alt="Right" />
-        <img src="https://i.imgur.com/XSA2Oom.gif" alt="Up" />
-        <img src="https://i.imgur.com/4LGAZ8t.gif" alt="Left" />
+        <img
+          src="https://i.imgur.com/JYUB0m3.png"
+          alt="Down"
+          ref={linkDownRef}
+        />
+        <img
+          src="https://i.imgur.com/GEXD7bk.gif"
+          alt="Right"
+          ref={linkRightRef}
+        />
+        <img src="https://i.imgur.com/XSA2Oom.gif" alt="Up" ref={linkUpRef} />
+        <img
+          src="https://i.imgur.com/4LGAZ8t.gif"
+          alt="Left"
+          ref={linkLeftRef}
+        />
       </div>
     </div>
   );
