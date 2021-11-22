@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/moving-boxes/static/css/main.16c4ce46.chunk.css",
-    "main.js": "/moving-boxes/static/js/main.2fc314c5.chunk.js",
-    "main.js.map": "/moving-boxes/static/js/main.2fc314c5.chunk.js.map",
+    "main.css": "/moving-boxes/static/css/main.6ec1a880.chunk.css",
+    "main.js": "/moving-boxes/static/js/main.fbedc3f1.chunk.js",
+    "main.js.map": "/moving-boxes/static/js/main.fbedc3f1.chunk.js.map",
     "runtime-main.js": "/moving-boxes/static/js/runtime-main.51650de9.js",
     "runtime-main.js.map": "/moving-boxes/static/js/runtime-main.51650de9.js.map",
-    "static/js/2.cfd996fd.chunk.js": "/moving-boxes/static/js/2.cfd996fd.chunk.js",
-    "static/js/2.cfd996fd.chunk.js.map": "/moving-boxes/static/js/2.cfd996fd.chunk.js.map",
+    "static/js/2.fc4e3ee0.chunk.js": "/moving-boxes/static/js/2.fc4e3ee0.chunk.js",
+    "static/js/2.fc4e3ee0.chunk.js.map": "/moving-boxes/static/js/2.fc4e3ee0.chunk.js.map",
     "index.html": "/moving-boxes/index.html",
-    "static/css/main.16c4ce46.chunk.css.map": "/moving-boxes/static/css/main.16c4ce46.chunk.css.map",
-    "static/js/2.cfd996fd.chunk.js.LICENSE.txt": "/moving-boxes/static/js/2.cfd996fd.chunk.js.LICENSE.txt"
+    "static/css/main.6ec1a880.chunk.css.map": "/moving-boxes/static/css/main.6ec1a880.chunk.css.map",
+    "static/js/2.fc4e3ee0.chunk.js.LICENSE.txt": "/moving-boxes/static/js/2.fc4e3ee0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.51650de9.js",
-    "static/js/2.cfd996fd.chunk.js",
-    "static/css/main.16c4ce46.chunk.css",
-    "static/js/main.2fc314c5.chunk.js"
+    "static/js/2.fc4e3ee0.chunk.js",
+    "static/css/main.6ec1a880.chunk.css",
+    "static/js/main.fbedc3f1.chunk.js"
   ]
 }
